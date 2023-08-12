@@ -36,7 +36,6 @@ const HomePage = () => {
     getTotal();
   }, []);
 
-
   const getAllProducts = async () => {
     try {
       setLoading(true);
@@ -66,7 +65,6 @@ const HomePage = () => {
       console.log(error);
     }
   };
-
 
   useEffect(() => {
     if (page === 1) return;
@@ -101,7 +99,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    if (!checked.length || !radio.length) {
+    if (!checked.length && !radio.length) {
       getAllProducts();
     }
   }, [checked.length, radio.length]);
@@ -125,8 +123,6 @@ const HomePage = () => {
       console.log(error);
     }
   };
-
-
 
   return (
     <Layout>
@@ -185,7 +181,7 @@ const HomePage = () => {
                     <div className="card-body">
                       <h5 className="card-title">{p.name}</h5>
                       <p className="card-text">
-                        {p.description.substring(0,30)}...
+                        {p.description.substring(0, 30)}...
                       </p>
                       <div className="row">
                         <div className="">Price: $ {p.price}</div>
@@ -236,5 +232,4 @@ const HomePage = () => {
     </Layout>
   );
 };
-
 export default HomePage;
