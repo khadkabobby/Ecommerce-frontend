@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* font-family: 'Playfair Display', serif;*/
+
+/* font-family: 'Poppins', sans-serif;*/
+
+/* Navbar css */
+.navbar {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: 0px solid gray !important;
+}
+.nav-link {
+  font-weight: 300 !important;
+}
+.active {
+  border-bottom: 0.5px solid gray;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-family: "roboto", sans-serif;
+  letter-spacing: 3px;
+}
+
+/* footer */
+.footer {
+  color: #fff;
+  padding: 25px;
+  background: #000;
+  background: linear-gradient(to right, #434343, #000) !important;
+}
+.footer a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+.footer a:hover {
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
+
+/* Pagenotfound */
+.notfoundpage {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notfoundpage h1 {
+  font-weight: 700;
+  font-size: 100px;
+}
+.notfoundpage p {
+  font-weight: normal;
+  font-size: 30px;
+}
+.notfoundpage button {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  margin-top: 10px;
+}
+.notfoundpage button:hover {
+  background: #ffefba;
+}
+
+/* contact page */
+.contactpage {
+  width: 85%;
+  height: 70vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 1050px) {
+    background-image: url("./assets/images/contactus.jpeg");
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    position: relative;
+  }
+}
+.contactpage .image {
+  flex-basis: 48%;
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+}
+.contactpage img {
+  width: 100%;
+  object-fit: cover;
+}
+.contactpage .contact__details {
+  flex-basis: 45%;
+  @media screen and (max-width: 1050px) {
+    flex-basis: 100%;
+    min-height: 70vh;
+    background: rgba(5, 5, 5, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.8px);
+    -webkit-backdrop-filter: blur(2.8px);
+    border: 1px solid rgba(149, 140, 140, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.contact__details p {
+  @media screen and (max-width: 1050px) {
+    text-align: center;
+  }
+}
+.contactpage .heading {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+.contact__details p {
+  @media screen and (max-width: 1050px) {
+    color: #fff;
+  }
+}
+
+/* About page */
+.about {
+  display: flex;
+  width: 85%;
+  height: 65vh;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 1050px) {
+    background: url("./assets/images/about.jpeg");
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+  }
+}
+.about__image {
+  flex-basis: 45%;
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+}
+.about__image img {
+  width: 100%;
+}
+.about__details {
+  flex-basis: 45%;
+  object-fit: cover;
+  @media screen and (max-width: 1050px) {
+    flex-basis: 100%;
+    min-height: 70vh;
+    background: rgba(5, 5, 5, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.8px);
+    -webkit-backdrop-filter: blur(2.8px);
+    border: 1px solid rgba(149, 140, 140, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-top: 30px;
+    padding: 0 10px;
+  }
+}
+
+/* product page */
+.product-link {
+  text-decoration: none;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.product-link:hover {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
