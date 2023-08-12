@@ -184,6 +184,9 @@ const HomePage = () => {
                         {p.description.substring(0, 30)}...
                       </p>
                       <div className="row">
+                        <div className="">Category: {p.category?.name}</div>
+                      </div>
+                      <div className="row">
                         <div className="">Price: $ {p.price}</div>
                       </div>
                       <button
