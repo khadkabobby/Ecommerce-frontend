@@ -31,22 +31,11 @@ const HomePage = () => {
     }
   };
 
-  const getTotal = async () => {
-    try {
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_API}/api/v1/product/product-count`
-      );
-      if (data?.success) {
-        setTotal(data.total);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
     getAllCategory();
     getTotal();
   }, []);
+
 
   const getAllProducts = async () => {
     try {
@@ -64,6 +53,20 @@ const HomePage = () => {
       toast.error("Error in getting all products");
     }
   };
+
+  const getTotal = async () => {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API}/api/v1/product/product-count`
+      );
+      if (data?.success) {
+        setTotal(data?.total);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   useEffect(() => {
     if (page === 1) return;
@@ -97,20 +100,6 @@ const HomePage = () => {
     setChecked(all);
   };
 
-  const getFilteredProducts = async () => {
-    try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_API}/api/v1/product/filter-products`,
-        { checked, radio }
-      );
-      if (data.success) {
-        setProducts(data.products);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     if (!checked.length || !radio.length) {
       getAllProducts();
@@ -122,6 +111,22 @@ const HomePage = () => {
       getFilteredProducts();
     }
   }, [checked, radio]);
+
+  const getFilteredProducts = async () => {
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API}/api/v1/product/filter-products`,
+        { checked, radio }
+      );
+      if (data?.success) {
+        setProducts(data?.products);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
 
   return (
     <Layout>
@@ -180,10 +185,10 @@ const HomePage = () => {
                     <div className="card-body">
                       <h5 className="card-title">{p.name}</h5>
                       <p className="card-text">
-                        {p.description.substring(0, 30)}...
+                        {p.description.substring(0,30)}...
                       </p>
                       <div className="row">
-                        <div className="">Price: Rs {p.price}</div>
+                        <div className="">Price: $ {p.price}</div>
                       </div>
                       <button
                         className="btn btn-primary ms-1"
