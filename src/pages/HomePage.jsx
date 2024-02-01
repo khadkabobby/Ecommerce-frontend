@@ -12,7 +12,7 @@ const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0); 
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [cart, setCart] = useCart();
@@ -30,10 +30,23 @@ const HomePage = () => {
       console.log(error);
     }
   };
+  const getTotal = async () => {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API}/api/v1/product/product-count`
+      );
+      if (data?.success) {
+        setTotal(data?.total);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     getAllCategory();
     getTotal();
+    getAllProducts();
   }, []);
 
   const getAllProducts = async () => {
@@ -53,18 +66,7 @@ const HomePage = () => {
     }
   };
 
-  const getTotal = async () => {
-    try {
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_API}/api/v1/product/product-count`
-      );
-      if (data?.success) {
-        setTotal(data?.total);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
 
   useEffect(() => {
     if (page === 1) return;
